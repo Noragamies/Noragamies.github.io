@@ -1,0 +1,48 @@
+body {
+    font-family: "Arial", sans-serif;
+    text-align: center;
+}
+
+#title {
+    text-align: center;
+    font-size: 3em;
+    font-style: oblique;
+    font-family: "Times New Roman", serif;
+}
+
+.title-dark {
+    color: rgb(0, 160, 0);
+}
+
+.title-light {
+    color: rgb(0, 210, 0);
+}
+
+.button {
+    background-color: rgb(118, 213, 23);
+    color: rgb(255, 255, 255);
+
+    margin: 5%;
+    border-radius: 10px;
+    border:solid 2px rgb(0, 0, 0);
+    padding: 2%;
+
+    width: 20%;
+
+    display: inline-block;
+    position: relative;
+
+    font-size: 1.25em;
+    font-weight: 600;
+}
+
+.button:hover {
+    background-color: rgb(100, 192, 10);
+    color: rgb(243, 240, 240);
+}
+
+.button:active {
+    background-color: rgb(100, 192, 10);
+    padding: 1.8%;
+    margin: 5.2%;
+  }
