@@ -1,7 +1,75 @@
-#title {
+body {
+    background-color: rgb(45, 45, 45);
+    font-family: "Arial", sans-serif;
+}
+
+.main-container {  display: grid;
+    grid-template-columns: 1fr;
+    height: 100vh;
+    grid-template-rows: 0.1fr 0.01fr 1.8fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "navbar"
+        "sepline"
+        "main";
+}
+  
+.navbar {
+    grid-area: navbar;
+}
+
+.sepline {
+    grid-area: sepline;
+    background-color: white;
+}
+
+.main {
+    grid-area: main;
+    color: white;
+    font-size: 5em;
     text-align: center;
-    font-size: 3em;
-    font-style: oblique;
-    color: rgb(0, 210, 0);
-    font-family: "Times New Roman", serif;
+    font-weight: 900;
+}
+
+.navbar {
+    grid-area: navbar;
+    display: grid;
+    grid-template-columns: 0.1fr 0.2fr 1fr;
+    grid-template-rows: 1.8fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "home-icon guild-name materials-btn";
+}
+  
+.home-icon {
+    grid-area: home-icon;
+    text-align: center;
+    color: red;
+}
+  
+.guild-name {
+    grid-area: guild-name;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 3.2em;
+    text-decoration: none;
+}
+
+.materials-btn {
+    grid-area: materials-btn;
+
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 3.2em;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.title-light {
+    color: rgb(0, 190, 0);
+}
+
+.title-dark {
+    color: rgb(0, 130, 0);
 }

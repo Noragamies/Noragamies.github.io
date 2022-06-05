@@ -33,12 +33,12 @@ body {
 .navbar {
     grid-area: navbar;
     display: grid;
-    grid-template-columns: 0.05fr 1fr;
+    grid-template-columns: 0.1fr 0.2fr 1fr;
     grid-template-rows: 1.8fr;
     gap: 0px 0px;
     grid-auto-flow: row;
     grid-template-areas:
-      "home-icon guild-name";
+      "home-icon guild-name materials-btn";
 }
   
 .home-icon {
@@ -51,6 +51,15 @@ body {
     grid-area: guild-name;
     font-family: 'Times New Roman', Times, serif;
     font-size: 3.2em;
+    text-decoration: none;
+}
+
+.materials-btn {
+    grid-area: materials-btn;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 3.2em;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .title-light {
