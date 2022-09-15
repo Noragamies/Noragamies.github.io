@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Arial", sans-serif;
+}
+
+body {
+    background-color: rgb(45, 45, 45);
+}
+
+.main-container {  display: grid;
+    grid-template-columns: 1fr;
+    height: 100vh;
+    grid-template-rows: 0.1fr 0.01fr 1.8fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "navbar"
+        "sepline"
+        "main";
+}
+
+.calendar {
+    /* background-color: white; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas: 
+        "date-0 date-1 date-2"
+        "date-3 date-4 date-5";
+}  
+
+.date-0 {
+    grid-area: date-0;
+    border-top: 0.1cm white none;
+    border-right: 0.1cm white dashed;
+    border-bottom: 0.1cm white dashed;
+    border-left: 0.1cm white dashed;
+    background-color: rgb(25, 25, 34);
+}
+.date-1 {
+    grid-area: date-1;
+    border-top: 0.1cm white none;
+    border-right: 0.1cm white dashed;
+    border-bottom: 0.1cm white dashed;
+    border-left: 0.1cm white none;
+    background-color: rgb(25, 25, 34);
+}
+.date-2 {
+    grid-area: date-2;
+    border-top: 0.1cm white none;
+    border-right: 0.1cm white dashed;
+    border-bottom: 0.1cm white dashed;
+    border-left: 0.1cm white none;
+    background-color: rgb(25, 25, 34);
+}
+.date-3 {
+    grid-area: date-3;
+    border-top: 0.1cm white none;
+    border-right: 0.1cm white dashed;
+    border-bottom: 0.1cm white dashed;
+    border-left: 0.1cm white dashed;
+    background-color: rgb(25, 25, 34);
+}
+.date-4 {
+    grid-area: date-4;
+    border-top: 0.1cm white none;
+    border-right: 0.1cm white dashed;
+    border-bottom: 0.1cm white dashed;
+    border-left: 0.1cm white none;
+    background-color: rgb(25, 25, 34);
+}
+.date-5 {
+    grid-area: date-5;
+    border-top: 0.1cm white none;
+    border-right: 0.1cm white dashed;
+    border-bottom: 0.1cm white dashed;
+    border-left: 0.1cm white none;
+    background-color: rgb(25, 25, 34);
+}
+
+.sepline {
+    grid-area: sepline;
+    background-color: white;
+}
+
+.main {
+    grid-area: main;
+    color: white;
+    text-align: center;
+}
+
+.navbar {
+    grid-area: navbar;
+    display: grid;
+    grid-template-columns: 0.1fr 1fr;
+    grid-template-rows: 1.8fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "home-icon guild-name";
+}
+  
+.home-icon {
+    grid-area: home-icon;
+    padding-bottom: 1.6vh;
+    padding-top: 2vh;
+    text-align: center;
+    color: red;
+}
+  
+.guild-name {
+    grid-area: guild-name;
+    padding-right: 4vh;
+    padding-bottom: 1.6vh;
+    padding-top: 2vh;
+    color: white;
+    font-size: 3.2em;
+    text-decoration: none;
+}
+
+.title-light {
+    color: rgb(0, 190, 0);
+}
+
+.title-dark {
+    color: rgb(0, 130, 0);
+}
+
+#day-template {
+    display: none
+}
+
+#list-item-template {
+    display: none;
+}
+
+.events {
+    padding-left: 6%;
+    color: rgb(191, 191, 191);
+
+}
+
+.date-title {
+    padding-bottom: 0.8vh;
+    padding-top: 0.8vh;
+    margin-bottom: 2.3vh;
+    text-align: center;
+    font-size: 2em;
+    font-weight: 300;
+    background-color: rgb(1, 109, 91);
+    color: rgb(238, 238, 238);
+}

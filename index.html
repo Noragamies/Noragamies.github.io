@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noragami - Home</title>
+</head>
+<body>
+    <div class="main-container">
+        <div class="navbar">
+            <a href="" class="home-icon">
+                <img src="images/guild_icon.png">
+            </a>
+            <a href="" class="guild-name">
+                <span class="title-light">Nor</span><span class="title-dark">aga</span><span class="title-light">mi</span>
+            </a>
+        </div>
+
+        <div class="sepline"></div>
+        
+            <div class="calendar" id="calendar">
+                <li id="list-item-template"></li>
+                <div id="day-template" class="date">
+                    <h2 class="date-title">tere</h2>
+                    <ul class="events">
+                        <li>
+                            <form action="https://sheetdb.io/api/v1/evxo8369koggk" method="post">
+                                <input type="text" id="event-input-box" placeholder="Enter event" name="data[event]" required>
+                                <button id="input-btn" type="submit">OK</button>
+                                <input type="text" id="time-input-box" name="data[date]" hidden>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
