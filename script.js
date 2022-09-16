@@ -2,13 +2,14 @@ const url = 'https://script.google.com/macros/s/AKfycbzsZxBGzYG5ep0OTmRWCi6E-8aa
 
 const d = new Date()
 
+const formListItem = document.getElementById('form-list-item')
 const calendarE = document.getElementById('calendar')
 const dayTemplate = document.getElementById('day-template')
 const listItemTemplate = document.getElementById('list-item-template')
 
 for (let i = 0; i < 6; i++) {
     d.setDate(d.getDate() + 1)
-    const day = d.getUTCDate().toString().padStart(2, '0')
+    const day = d.getUTCDate().toString().padStart(2, '0') - 1
 
     d.setMonth(d.getMonth())
     const month = d.getUTCMonth().toString().padStart(2, '0')
@@ -23,6 +24,7 @@ for (let i = 0; i < 6; i++) {
     const ulElement =  h2Element.nextElementSibling
     ulElement.id = 'ul-list-' + dayTemplateClone.id
     const liElement = ulElement.firstElementChild
+    liElement.id = liElement.id + '-' + String(i)
     var form = liElement.firstElementChild
     const eventInputBox = form.firstElementChild
     const inputBtn = eventInputBox.nextElementSibling
@@ -50,13 +52,33 @@ for (let i = 0; i < 6; i++) {
 }
 
 
+const toggleEditModeBtn = document.getElementById('toggle-edit-mode-btn')
+toggleEditModeBtn.addEventListener('click', toggleEditMode)
+
+
+function toggleEditMode() {
+    console.log('button pressed!')
+    if (toggleEditModeBtn.innerText == '+') {
+        toggleEditModeBtn.innerText = '-'
+        for (let i = 0; i < 6; i++) {
+            document.getElementById('form-list-item-' + String(i)).style.display = "initial";
+        }
+    }
+    else {
+        toggleEditModeBtn.innerText = '+'
+        for (let i = 0; i < 6; i++) {
+            document.getElementById('form-list-item-' + String(i)).style.display = "none";
+        }
+    }
+}
+
+
 function addListItem(date, event) {
     const listItemTemplateClone = listItemTemplate.cloneNode(true)
     listItemTemplateClone.innerText = String(event)
     listItemTemplateClone.id = ''
     const targetDay = document.getElementById('ul-list-' + String(date))
-    targetDay.insertBefore(listItemTemplateClone, targetDay.firstElementChild)
-
+    targetDay.appendChild(listItemTemplateClone)
 }
 
 
@@ -73,11 +95,7 @@ function pullEvents() {
         events = data.test1
         console.log(events)
         events.forEach(function (e) {
-            dateK = e[0]
-            eventK = e[1]
-            console.log(typeof dateK)
-            console.log(typeof eventK)
-            addListItem(dateK, eventK)
+            addListItem(e[0], e[1])
         });
         return
     })

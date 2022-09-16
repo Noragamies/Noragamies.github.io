@@ -21,7 +21,6 @@ body {
 }
 
 .calendar {
-    /* background-color: white; */
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -35,7 +34,7 @@ body {
     grid-area: date-0;
     border-top: 0.1cm white none;
     border-right: 0.1cm white dashed;
-    border-bottom: 0.1cm white dashed;
+    border-bottom: 0.1cm white solid;
     border-left: 0.1cm white dashed;
     background-color: rgb(25, 25, 34);
 }
@@ -43,7 +42,7 @@ body {
     grid-area: date-1;
     border-top: 0.1cm white none;
     border-right: 0.1cm white dashed;
-    border-bottom: 0.1cm white dashed;
+    border-bottom: 0.1cm white solid;
     border-left: 0.1cm white none;
     background-color: rgb(25, 25, 34);
 }
@@ -51,7 +50,7 @@ body {
     grid-area: date-2;
     border-top: 0.1cm white none;
     border-right: 0.1cm white dashed;
-    border-bottom: 0.1cm white dashed;
+    border-bottom: 0.1cm white solid;
     border-left: 0.1cm white none;
     background-color: rgb(25, 25, 34);
 }
@@ -94,12 +93,12 @@ body {
 .navbar {
     grid-area: navbar;
     display: grid;
-    grid-template-columns: 0.1fr 1fr;
+    grid-template-columns: 0.1fr 1fr 0.1fr;
     grid-template-rows: 1.8fr;
     gap: 0px 0px;
     grid-auto-flow: row;
     grid-template-areas:
-      "home-icon guild-name";
+      "home-icon guild-name toggle-edit-mode-btn";
 }
   
 .home-icon {
@@ -118,6 +117,17 @@ body {
     color: white;
     font-size: 3.2em;
     text-decoration: none;
+}
+
+.toggle-edit-mode-btn {
+    grid-area: toggle-edit-mode-btn;
+    border: hidden;
+    border-radius: 6px;
+    margin: 2vh;
+    font-size: 4em;
+    background-color: rgb(1, 109, 91);
+    cursor: pointer;
+    color: whitesmoke;
 }
 
 .title-light {
@@ -145,10 +155,45 @@ body {
 .date-title {
     padding-bottom: 0.8vh;
     padding-top: 0.8vh;
-    margin-bottom: 2.3vh;
+    margin-bottom: 2.2vh;
     text-align: center;
     font-size: 2em;
     font-weight: 300;
     background-color: rgb(1, 109, 91);
     color: rgb(238, 238, 238);
+}
+
+.list-item {
+    margin-top: 0.8em;
+}
+
+.input-btn {
+    cursor: pointer;
+    padding: 0.4vh;
+    color: whitesmoke;
+    border: black solid;
+    background-color: rgb(1, 109, 91);
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: rgb(1, 109, 91);
+    border: 0.2vh dashed rgb(0, 179, 149);
+}
+
+button.toggle-edit-mode-btn:hover {
+    background-color: rgb(1, 109, 91);
+    border: 0.2vh dashed rgb(0, 179, 149);
+    margin: 1.8vh;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+.event-input-box {
+    padding: 0.4vh;
+    background-color: rgb(255, 255, 255);
+    border: solid black;
+    border-radius: 4px;
 }
